@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <script>
+        // удалить из строки повторяющиеся символы
+        var first = '1234156117181119999';
+        function removeDuplicateCharacters(string) {
+        return string
+        .split('')
+        .filter(function(item, pos, self) {
+         return self.indexOf(item) == pos;
+         })
+         .join('');
+         }
+        console.log(removeDuplicateCharacters(first));
+        // количество слов в строке
+        var second = 'Hi, i am learning javascript';
+        function WordCount(str) { 
+        return str.split(" ").length;
+        }
+        console.log(WordCount(second));
+        // самое длинное слово в строке
+        var third = 'Hi, i am learning javascript';
+        
+        // удалить пробелы в строке
+        var fourth = 'Hi, i am learning javascript';
+        console.log( fourth.split(' ').join('') );
+        // заменить пробелы на зяпятые
+        var fifth = 'Hi, i am learning javascript';
+        console.log( fifth.split(' ').join(',') );
+        // Отфильтровать массив таким образом чтобы числа были не меньше 20 используя фильтр!
+        var sixth = [3, 42, 234, 5, 3, 21, 53];
+        function isBigEnough(value) {
+         return value >= 20;
+        }
+        var filtered = [3, 42, 234, 5, 3, 21, 53].filter(isBigEnough);
+        console.log(filtered)
+        // Вернуть новый массив из строк добавив слово месяц если к элементу если число больше 20 используя map
+        // [3, '42 месяца', '23 месяца', 5, 3, '21 месяца', '53 месяца']
+        var seventh = [3, 42, 23, 5, 3, 21, 53];
+        let newm = seventh.map(( newm,i )=> i > 20 ? newm + 'месяца' : newm);
+        // используя reduce просуммировать элементы которые больше 3
+        var eight = [3, 42, 23, 5, 3, 21, 53];
+        var sum = eight.reduce((sum, i)=> i > 3 ? sum + i : sum);
+
+
+        // Есть обьект car! пробежаться по обьекту через for in и подсчитать количество свойств в обьекте, 
+        const car = {
+            model: 'BMW',
+            price: 45000,
+            year: 2019,
+            country: 'Germany'
+        };
+        var count = 0;
+        for (k in car) if (car.hasOwnProperty(k)) count++;
+        // Написать функцию которая принимает только поле array обьекта person и сортирует по убыванию по id и возвращает массив!!
+        const person = {
+            name: 'Vasia',
+            gender: 'male',
+            array: [{ id: 1, name: 'Vasia' }, { id: 6, name: 'Boria' }, { id: 2, name: 'Petia' }, { id: 3, name: 'Misha' }]
+        };
+        
+        person.array.sort(function(a, b) {
+    return parseFloat(a.id) - parseFloat(b.id);
+});
+
+    </script>
+</body>
+
+</html>
